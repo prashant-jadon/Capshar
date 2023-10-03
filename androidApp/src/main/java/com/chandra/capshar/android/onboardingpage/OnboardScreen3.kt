@@ -9,7 +9,10 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -19,11 +22,13 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.chandra.capshar.android.R
 import com.chandra.capshar.android.imagepainter.imageCard
 
+@Preview
 @Composable
 fun OnboardScreen3(){
 
@@ -55,15 +60,26 @@ fun OnboardScreen3(){
             Row(modifier = Modifier.fillMaxWidth().
             height(100.dp)
                 .padding(top = 50.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly,
+                horizontalArrangement = Arrangement.SpaceAround,
                 verticalAlignment = Alignment.CenterVertically) {
-                Button(onClick = { /*TODO*/ }) {
-                    Text(text = "SKIP")
-
+                Button(modifier = Modifier.width(100.dp).height(50.dp),
+                    shape = RoundedCornerShape(size = 25.dp)
+                    , colors = ButtonDefaults.buttonColors(
+                        backgroundColor = Color(0xFFFFB36D)
+                    ),
+                    onClick = { /*TODO*/ }) {
+                    Text(text = "SKIP", fontSize = 20.sp)
                 }
 
-                Button(onClick = { /*TODO*/ }) {
-                    Text(text = "NEXT")
+                Button(modifier = Modifier.width(100.dp).height(50.dp),
+                    shape = RoundedCornerShape(size = 25.dp)
+                    , colors = ButtonDefaults.buttonColors(
+                        backgroundColor = Color(0xFF61D0FF)
+                    ),
+                    onClick = {
+
+                    }) {
+                    Text(text = "NEXT", fontSize = 20.sp)
                 }
 
             }
